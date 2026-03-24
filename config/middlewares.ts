@@ -18,9 +18,15 @@ module.exports = [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['*'],
+      origin: [
+        'https://mente-shop.vercel.app',
+        'http://localhost:5173',
+        'http://localhost:5174',
+        '*'
+      ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS', 'HEAD'],
-      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
+      headers: ['Content-Type', 'Authorization', 'Origin', 'Accept', 'X-Requested-With'],
+      keepHeaderOnError: true,
     },
   },
   'strapi::poweredBy',
